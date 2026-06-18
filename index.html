@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Image Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- JSZip for creating zip files in the browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- FileSaver for triggering the zip download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Steam Image Downloader</h1>
+        <p>Download trading cards, badges, emoticons, and backgrounds directly from SteamCardExchange.</p>
+        <form id="fetch-form">
+            <input type="text" id="app-input" placeholder="App ID or Steam Store Link (e.g. 1119980)" required autocomplete="off">
+            <button type="submit" id="fetch-btn">Fetch Images</button>
+        </form>
+        <div id="status-message"></div>
+    </header>
+
+    <div id="game-info-container" style="display: none;">
+        <img id="game-poster" src="" alt="Game Poster">
+        <div class="game-details">
+            <h2 id="game-name">Game Name</h2>
+            <button id="download-all-btn" class="btn-primary">Download ALL Items (Everything)</button>
+        </div>
+    </div>
+
+    <main id="results-container">
+        <!-- Categories and images will be injected here -->
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
