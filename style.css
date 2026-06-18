@@ -9,6 +9,10 @@
     --border: #456279;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-main);
@@ -18,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 header {
@@ -35,19 +40,37 @@ h1 {
 
 header p {
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.github-btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.github-btn:hover {
+    background-color: #555;
 }
 
 #fetch-form {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
 
 input[type="text"] {
-    flex: 1;
+    flex: 1 1 250px;
     padding: 0.75rem;
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -180,8 +203,10 @@ button:disabled {
 
 .category-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
@@ -194,7 +219,7 @@ button:disabled {
 
 .items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1.5rem;
 }
 
@@ -209,7 +234,7 @@ button:disabled {
 
 .item-media {
     width: 100%;
-    height: 150px;
+    aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
